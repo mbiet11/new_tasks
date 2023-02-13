@@ -6,8 +6,8 @@ function App(): JSX.Element {
         <div className="App">
             <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript.
-                <p>Mbiet Uko</p>
             </header>
+            <h1>Mbiet Uko</h1>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
