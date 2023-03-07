@@ -30,10 +30,7 @@ function App(): JSX.Element {
                     Log Hello World
                 </Button>
             </div>
-            <img
-                src="C:\Users\Mbiet Uko\Downloads\Chelsea-FC-Logo-3D-.jpg"
-                alt="Chelsea FC Logo"
-            />
+            <img src={require("./images/Chelsea.jpg")} alt="Chelsea FC Logo" />
 
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
