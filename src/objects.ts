@@ -82,7 +82,27 @@ export function toShortForm(question: Question): string {
  * Check the unit tests for more examples of what this looks like!
  */
 export function toMarkdown(question: Question): string {
-    return "";
+    const questionName = "# " + question.name;
+    const questionBody = question.body;
+
+    if (question.type === "short_answer_question") {
+        return questionName + "\n" + questionBody;
+    } else {
+        return (
+            questionName +
+            "\n" +
+            questionBody +
+            "\n" +
+            "- " +
+            question.options[0] +
+            "\n" +
+            "- " +
+            question.options[1] +
+            "\n" +
+            "- " +
+            question.options[2]
+        );
+    }
 }
 
 /**
@@ -109,7 +129,12 @@ export function publishQuestion(question: Question): Question {
  * The `published` field should be reset to false.
  */
 export function duplicateQuestion(id: number, oldQuestion: Question): Question {
-    return oldQuestion;
+    return {
+        ...oldQuestion,
+        name: "Copy of " + oldQuestion.name,
+        id,
+        published: false
+    };
 }
 
 /**
@@ -120,7 +145,8 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
  * Check out the subsection about "Nested Fields" for more information.
  */
 export function addOption(question: Question, newOption: string): Question {
-    return question;
+    const newOptions = [...question.options, newOption];
+    return { ...question, options: newOptions };
 }
 
 /**
@@ -137,5 +163,5 @@ export function mergeQuestion(
     contentQuestion: Question,
     { points }: { points: number }
 ): Question {
-    return contentQuestion;
+    return { ...contentQuestion, id, name, points, published: false };
 }
