@@ -16,7 +16,7 @@ function App(): JSX.Element {
                     <li> Bread </li>
                     <li> Afrobeats </li>
                 </ul>
-                <div className="con">
+                <div className="con 1">
                     <Container>
                         <Row>
                             <Col>
