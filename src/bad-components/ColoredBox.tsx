@@ -8,7 +8,6 @@ interface colorBox {
     setColorIndex: (newColoredBox: number) => void;
     colorIndex: number;
 }
-
 function ChangeColor({ setColorIndex, colorIndex }: colorBox): JSX.Element {
     return (
         <Button onClick={() => setColorIndex((1 + colorIndex) % COLORS.length)}>
